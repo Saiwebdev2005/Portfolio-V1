@@ -1,4 +1,70 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Pirata+One&family=Poppins:wght@400;700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body
+{
+scroll-behaviour:smooth;
+}
+
+
+@layer components
+{
+  .skills
+  {
+    @apply flex flex-col justify-center items-center bg-c1 p-4 border-4 rounded-lg hover:bg-white hover:text-purple-600 duration-300 md:max-w-2xl md:w-36 font-sans text-xl hover:border-white
+   
+  }
+}
+
+@keyframes custom-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes blob {
+  0% {
+    transform: translate(10px, 10px) scale(1);
+  }
+  33% {
+    transform: translate(100px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(10px, 0px) scale(1);
+  }
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.floating {
+  animation-name: floatingAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.floating:nth-child(odd) {
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+@keyframes floatingAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
