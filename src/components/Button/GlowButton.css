@@ -4,7 +4,7 @@
   --button-shadow: rgba(33, 4, 104, 0.2);
   --button-shine-left: #5BE9B9;
   --button-shine-right: #7510F7;
-  --button-glow-start:  #B000E8; /* Cyan glow start */
+  --button-glow-start:  #B000E8;
   --button-glow-end: #009FFD;
 
   appearance: none;
