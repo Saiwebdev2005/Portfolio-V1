@@ -3,6 +3,7 @@ import React from "react";
 import Link from 'next/link';
 import projects from './ProjectData'
 import Card from "../Card/Card";
+import Button from "../Button/GlowButton"
 function Project() {
  
   return (
@@ -20,9 +21,8 @@ function Project() {
 </div>
 <div className="flex justify-center p-8">
   <Link href="/project" passHref>
-    <button className="py-2 px-32 border-4 border-white rounded-md hover:border-c2 hover:text-c3 duration-300">
-      View All Projects
-    </button>
+    <Button buttonText="View All Projects" >
+    </Button>
   </Link>
 </div>
 

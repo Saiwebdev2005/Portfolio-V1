@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react'
 import axios from 'axios';
+import Button from '../Button/GlowButton';
 
 function ContactForm() {
 const [name,setName] = useState('');
@@ -9,7 +10,7 @@ const [message,setMessage] = useState('');
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
+  console.log("Submitted")
   //hide these data while moving to production
   const serviceId = 'service_8e5qx78';
   const templateId = 'template_yymh3gl';
@@ -40,12 +41,15 @@ try {
 }
 
   return (
-    <form  onSubmit={handleSubmit} className='flex flex-col '>
-      <input className='my-2 input border-white bg-c1' type="text" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} />
-      <input className='my-2 input bg-c1 border-white' type="email" placeholder='Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-      <textarea placeholder='Enter your message' className='my-2 textarea bg-c1 border-white' cols="30" rows="10"  value={message} onChange={(e) => setMessage(e.target.value)} />
-      <button type='submit' className='py-2 border-4 rounded-md font-bold border-white hover:bg-c3 hover:border-c3 hover:text-c2 duration-300'>Send Message</button>
-    </form>
+<form onSubmit={handleSubmit} className='flex flex-col '>
+  <input className='my-2 input border-white bg-c1' type="text" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} />
+  <input className='my-2 input bg-c1 border-white' type="email" placeholder='Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+  <textarea placeholder='Enter your message' className='my-2 textarea bg-c1 border-white' cols="30" rows="10"  value={message} onChange={(e) => setMessage(e.target.value)} />
+  <div className='w-full mx-auto'>
+    <Button className="w-full" buttonText="Send Message" />
+  </div>
+</form>
+
   )
 }
 

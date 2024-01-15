@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import style from "./About.module.css";
+import Button from "../Button/GlowButton"
 
 function About() {
   const [isReadMore, setIsReadMore] = useState(false);
@@ -59,9 +60,8 @@ function About() {
           <div className="read-more-content">
             {isReadMore && extraContent}
           </div>
-          <button onClick={toggleReadMore} className="read-more-less-button px-4 py-2 border-4 border-white hover:border-c2 hover:text-c3 duration-300 rounded-lg font-sans font-bold">
-            {isReadMore ? "Read Less ↑" : "Read More ↓"}
-          </button>
+          <Button onClick={toggleReadMore} buttonText={isReadMore ? "Read Less ↑" : "Read More ↓"}>
+          </Button>
         </div>
       </div>
       </div>

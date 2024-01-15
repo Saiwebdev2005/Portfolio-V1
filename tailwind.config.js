@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation:{
+          rotate:'rotate 2s linear infinite'
+      },
+      keyframes:{
+         rotate:{
+          to:{
+            transform: 'scale(1.05) translateY(-44px) rotate(360deg) translateZ(0)',
+          }
+         }
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,7 +25,7 @@ module.exports = {
       colors:{
         c1:"#000000",
         c2:"#7510F7",
-        c3:"#5BE9B9",
+        c3:"#5BE9B9",//cyan
         c4:"#141C3A"
       },
       fontFamily:{

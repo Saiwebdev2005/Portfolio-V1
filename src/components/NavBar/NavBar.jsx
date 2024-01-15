@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Button from "../Button/GlowButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,24 +55,20 @@ export default function Navbar() {
             {/* Desktop */}
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-8">
-                <a
-                  href="https://drive.google.com/file/d/1xwe9zWFc7dxTslzDv4pMl2axd37S-V98/view?usp=drive_link"
-                  className="text-white  hover:text-c3 rounded-lg border-4 border-white hover:border-c2 px-3 py-2  text-md font-sans font-bold duration-200"
-                >
-                  Resume
-                </a>
-                <a
-                  href="#Project"
-                  className="text-white hover:text-c3 rounded-lg border-4 border-white hover:border-c2 px-3 py-2  text-md font-sans font-bold duration-300"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#getInTouch"
-                  className="text-white hover:text-c3 rounded-lg border-4 border-white hover:border-c2 px-3 py-2  text-md font-sans font-bold duration-300"
-                >
-                  Get In Touch
-                </a>
+                <Button buttonText="Resume">
+                  <a href="https://drive.google.com/file/d/1xwe9zWFc7dxTslzDv4pMl2axd37S-V98/view?usp=drive_link"></a>
+                </Button>
+                <Button buttonText="Projects">
+                  <a href="#Project">Projects</a>
+                </Button>
+                <Button buttonText="Get In Touch">
+                  <a
+                    href="#getInTouch"
+                    className="text-white hover:text-c3 rounded-lg border-4 border-white hover:border-c2 px-3 py-2  text-md font-sans font-bold duration-300"
+                  >
+                    Get In Touch
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -80,27 +77,22 @@ export default function Navbar() {
       {/* Mobile */}
       <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="flex flex-col w-fit px-2 pt-2 pb-3 space-y-4">
-          <a
-            href="https://drive.google.com/file/d/1xwe9zWFc7dxTslzDv4pMl2axd37S-V98/view?usp=drive_link"
-            className="text-white hover:bg-white hover:text-c2 rounded-lg border-4 border-white px-3 py-2  text-sm font-sans"
-          >
-            Resume
-          </a>
-          <a
-            href="#Project"
-            className="text-white hover:bg-white hover:text-c2 rounded-lg border-4 border-white px-3 py-2  text-sm font-sans"
-          >
-            Projects
-          </a>
-          <a
-            href="#getInTouch"
-            className="text-white hover:bg-white hover:text-c2 rounded-lg border-4 border-white px-3 py-2  text-sm font-sans"
-          >
-            Get In Touch
-          </a>
+          <Button buttonText="Resume">
+            <a href="https://drive.google.com/file/d/1xwe9zWFc7dxTslzDv4pMl2axd37S-V98/view?usp=drive_link"></a>
+          </Button>
+          <Button buttonText="Projects">
+            <a href="#Project">Projects</a>
+          </Button>
+          <Button buttonText="Get In Touch">
+            <a
+              href="#getInTouch"
+              className="text-white hover:text-c3 rounded-lg border-4 border-white hover:border-c2 px-3 py-2  text-md font-sans font-bold duration-300"
+            >
+              Get In Touch
+            </a>
+          </Button>
         </div>
       </div>
     </nav>
   );
 }
-
