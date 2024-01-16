@@ -1,93 +1,149 @@
-.glow-button {
-  --button-background: #09041e;
-  --button-color: #fff;
-  --button-shadow: rgba(33, 4, 104, 0.2);
-  --button-shine-left: #5BE9B9;
-  --button-shine-right: #7510F7;
-  --button-glow-start:  #B000E8;
-  --button-glow-end: #009FFD;
 
-  appearance: none;
-  outline: none;
-  border: none;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 11px;
-  position: relative;
-  line-height: 24px;
-  cursor: pointer;
-  color: var(--button-color);
-  padding: 0;
-  margin: 0;
-  background: none;
-  z-index: 1;
-  box-shadow: 0 8px 20px var(--button-shadow);
+@property --border-angle-1 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0deg;
 }
 
-.glow-button .gradient {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  overflow: hidden;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  transform: scaleY(1.02) scaleX(1.005) rotate(-.35deg);
+@property --border-angle-2 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 90deg;
 }
 
-.glow-button .gradient:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform: scale(1.05) translateY(-44px) rotate(0deg) translateZ(0);
-  padding-bottom: 100%;
-  border-radius: 50%;
-  background: linear-gradient(90deg, var(--button-shine-left), var(--button-shine-right));
-  animation: rotate linear 2s infinite;
-}
-
-.glow-button span {
-  z-index: 1;
-  position: relative;
-  display: block;
-  padding: 10px 28px;
-  box-sizing: border-box;
-  width: fit-content;
-  min-width: 124px;
-  border-radius: inherit;
-  background-color: var(--button-background);
-  overflow: hidden;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-}
-
-.glow-button span:before {
-  content: '';
-  position: absolute;
-  left: -16px;
-  top: -16px;
-  transform: translate(var(--pointer-x, 0px), var(--pointer-y, 0px)) translateZ(0);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--button-glow, transparent);
-  opacity: var(--button-glow-opacity, 0);
-  transition: opacity var(--button-glow-duration, .5s);
-  filter: blur(20px);
-}
-
-.glow-button:hover {
-  --button-glow-opacity: 5;
-  --button-glow-duration: .25s; /* Increase this for a longer transition */
-}
-
-.glow-button span:before {
-  filter: blur(60px); /* Increase this for a more intense glow */
+@property --border-angle-3 {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 180deg;
 }
 
 
-@keyframes rotate {
-  to {
-    transform: scale(1.05) translateY(-44px) rotate(360deg) translateZ(0);
+/* sRGB color. */
+:root {
+	--bright-blue:  #5BE9B9; /* cyan*/
+	--bright-green: #7510F7; /* violet */
+	--bright-red: rgb(255, 255, 255);
+	--background: black;
+	--foreground: white;
+	--border-size: 2px;
+	--border-radius: 0.75em;
+}
+
+/* Display-P3 color, when supported. */
+@supports (color: color(display-p3 1 1 1)) {
+	:root {
+		--bright-blue: color(display-p3 0.36 0.91 0.73); /* More towards violet */
+		--bright-green: color(display-p3 0.46 0.06 0.97); /* Cyan */
+		--bright-red: color(display-p3 1 1 1);
+	}
+}
+
+@keyframes rotateBackground {
+	to { --border-angle-1: 360deg; }
+}
+
+@keyframes rotateBackground2 {
+	to { --border-angle-2: -270deg; }
+}
+
+@keyframes rotateBackground3 {
+	to { --border-angle-3: 540deg; }
+}
+
+/* body {
+	background: var(--background);
+	color: var(--foreground);
+	min-height: 100dvh;
+	display: grid;
+	place-content: center;
+	margin: 0;
+	font-family: "Aspekta";
+} */
+
+button {
+	--border-angle-1: 0deg;
+	--border-angle-2: 90deg;
+	--border-angle-3: 180deg;
+	color: inherit;
+	font-size: calc(0.8rem + 4vmin);
+	font-family: inherit;
+	border: 0;
+	padding: var(--border-size);
+	display: flex;
+	width: max-content;
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	background-image: conic-gradient(
+			from var(--border-angle-1) at 10% 15%,
+			transparent,
+			var(--bright-blue) 10%,
+			transparent 30%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-2) at 70% 60%,
+			transparent,
+			var(--bright-green) 10%,
+			transparent 60%,
+			transparent
+		),
+		conic-gradient(
+			from var(--border-angle-3) at 50% 20%,
+			transparent,
+			var(--bright-red) 10%,
+			transparent 50%,
+			transparent
+		);
+	animation: 
+		rotateBackground 3s linear infinite,
+		rotateBackground2 8s linear infinite,
+		rotateBackground3 13s linear infinite;
+}
+
+/* Change this background to transparent to see how the gradient works */
+button div {
+	background: var(--background); 
+	padding: 1em 1.5em;
+	border-radius: calc(var(--border-radius) - var(--border-size));
+	color: var(--foreground);
+}
+
+@font-face {
+	font-family: "Aspekta";
+	font-weight: normal;
+	src: url("https://assets.codepen.io/240751/Aspekta-300.woff2") format("woff2");
+}
+@media (min-width: 1024px) {
+  button {
+    font-size: 1rem; /* Adjust as needed */
+    padding: var(--border-size);
+  }
+
+  button div {
+    padding: 1em 2.5em; /* Adjust as needed */
+  }
+}
+
+/* For tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  button {
+    font-size: 0.8rem; /* Adjust as needed */
+    padding: calc(var(--border-size) / 2);
+  }
+
+  button div {
+    padding: 0.8em 1.2em; /* Adjust as needed */
+  }
+}
+
+/* For mobile */
+@media (max-width: 767px) {
+  button {
+    font-size: 0.6rem; /* Adjust as needed */
+    padding: calc(var(--border-size) / 3);
+  }
+
+  button div {
+    padding: 0.6em 0.9em; /* Adjust as needed */
   }
 }

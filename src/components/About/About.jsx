@@ -60,8 +60,10 @@ function About() {
           <div className="read-more-content">
             {isReadMore && extraContent}
           </div>
-          <Button onClick={toggleReadMore} buttonText={isReadMore ? "Read Less ↑" : "Read More ↓"}>
+          <div onClick={toggleReadMore}>
+          <Button  buttonText={isReadMore ? "Read Less ↑" : "Read More ↓"}>
           </Button>
+          </div>
         </div>
       </div>
       </div>

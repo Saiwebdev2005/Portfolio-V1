@@ -1,7 +1,8 @@
 import React from 'react';
 import { SlSocialInstagram, SlSocialGithub, SlSocialLinkedin, SlSocialGoogle } from "react-icons/sl";
 import  style from './HeroSection.module.css';
-
+import HeadText from "../HeadText/HeadText"
+import Starfield from '@/app/test/StarField';
 // SocialLink component
 const SocialLink = ({ Icon, Link }) => (
   <li className="cursor-pointer hover:text-c3 duration-300">
@@ -23,19 +24,20 @@ const socialLinksData = [
 
 
 // HeroSection component
+// HeroSection component
+// HeroSection component
 const HeroSection = () => {
   let image = "/assets/astronaut.png";
   return (
-    <div className="p-4 py-24 md:py-32 h-screen bg-c12">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row">
+    <div className="p-4 py-24 md:py-32 h-screen bg-c12 relative">
+      <Starfield className="absolute inset-0 z-0" />
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row z-10 relative">
         {/* left section */}
         <div className="flex flex-col md:w-1/2 text-center md:items-left justify-center space-y-4 md:text-left">
           <h2 className="text-white text-xl md:text-xl lg:text-2xl font-semibold">
             Hi, my name is
           </h2>
-          <h1 className="text-4xl md:text-8xl scale-115 font-bold text-c3 hover:uppercase duration-1000">
-            Sai Kumar
-          </h1>
+          <HeadText/>
           <p>Junior Frontend Developer - KGXperience</p>
           <ul className="flex flex-row justify-center md:justify-start space-x-8 text-2xl">
             {socialLinksData.map((link, index) => (
@@ -51,5 +53,7 @@ const HeroSection = () => {
     </div>
   );
 };
+
+
 
 export default HeroSection;
