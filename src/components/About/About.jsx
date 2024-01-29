@@ -4,30 +4,6 @@ import style from "./About.module.css";
 import Button from "../Button/GlowButton"
 
 function About() {
-  const [isReadMore, setIsReadMore] = useState(false);
-
-  const extraContent = <div>
-    <p>
-      But that’s not all! I’m also a blockchain enthusiast, always on the
-      lookout for the next big thing. It’s like being a treasure hunter,
-      but the treasure is a block of code!
-    </p>
-    <p>
-      Currently, I’m expanding my tech arsenal at KG College of Arts and
-      Science, pursuing a Bachelor of Science in Information Technology.
-      It’s like being back at Hogwarts, but instead of spells, I’m
-      learning about web and blockchain development!
-    </p>
-    <p>
-      In the grand scheme of things, I’m just a coder on a mission - to
-      become an innovative developer and maybe, just maybe, change the
-      world one block(chain) at a time!
-    </p>
-  </div>;
-
-  const toggleReadMore = () => {
-    setIsReadMore(!isReadMore);
-  };
 
   return (
     <div className="max-w-4xl mx-auto h-fit mb-12 p-12">
@@ -53,17 +29,8 @@ function About() {
         <div className="text-center sm:text-left space-y-4 items-center w-full sm:w-1/2 font-sans">
           {/* Your paragraphs */}
           <p>
-            I’m <span className="text-purple-600">Sai Kumar</span>, your friendly neighborhood Front-End
-            Developer at KGXperience. I juggle with React.js components by day,
-            turning coffee into code and creating web magic.
+            I’m <span className="text-purple-600">Sai Kumar</span>,I'm Sai Kumar, a blockchain enthusiast and a front-end developer on a mission. I'm currently honing my skills in Information Technology at KG College of Arts and Science, with a special focus on learning about blockchain technology. My goal? To innovate and make a difference in the world, one block(chain) at a time!
           </p>
-          <div className="read-more-content">
-            {isReadMore && extraContent}
-          </div>
-          <div onClick={toggleReadMore}>
-          <Button  buttonText={isReadMore ? "Read Less ↑" : "Read More ↓"}>
-          </Button>
-          </div>
         </div>
       </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { SlSocialInstagram, SlSocialGithub, SlSocialLinkedin, SlSocialGoogle } from "react-icons/sl";
 import  style from './HeroSection.module.css';
 import HeadText from "../HeadText/HeadText"
-import Starfield from '@/app/test/StarField';
+import Starfield from '@/components/StarField/StarField';
 // SocialLink component
 const SocialLink = ({ Icon, Link }) => (
   <li className="cursor-pointer hover:text-c3 duration-300">
