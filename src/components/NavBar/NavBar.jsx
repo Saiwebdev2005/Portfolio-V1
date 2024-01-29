@@ -61,7 +61,7 @@ export default function Navbar() {
                 <Button buttonText="Projects">
                   <a href="#Project">Projects</a>
                 </Button>
-                <Button buttonText="Get In Touch">
+                <Button buttonText="Contact" className={""}>
                   <a
                     href="#getInTouch"
                     className="text-white hover:text-c3 rounded-lg border-4 border-white hover:border-c2 px-3 py-2  text-md font-sans font-bold duration-300"
