@@ -7,24 +7,35 @@
 
 .text {
   font-family: "Geist";
-  font-size: 5rem; /* Default size for large screens */
+  font-size: 7rem; /* Default size for large screens */
   margin: 0;
-  color: #5BE9B9; /* Changed from background-image to color */
+  color: #5BE9B9; /* Initial color */
   --wght-min: 32;
   --wght-max: 240;
+  animation: colorchange 5s infinite; /* Animation name, duration, and iteration */
 }
+
+@keyframes colorchange {
+  0% { color: #5BE9B9; } /* Turquoise */
+  25% { color: #7510F7; } /* Blue */
+  50% { color: #E95B5B; } /* Red */
+  75% { color: #82E95B; } /* Green */
+  100% { color: #5BE9B9; } /* Turquoise */
+}
+
+
 
 /* For tablets */
 @media (max-width: 1024px) {
   .text {
-    font-size: 3rem; /* Adjust as needed */
+    font-size: 5rem; /* Adjust as needed */
   }
 }
 
 /* For mobile */
 @media (max-width: 768px) {
   .text {
-    font-size: 2rem; /* Adjust as needed */
+    font-size: 3rem; /* Adjust as needed */
   }
 }
 

@@ -33,7 +33,7 @@ const HeroSection = () => {
       <Starfield className="absolute inset-0 z-0" />
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row z-10 relative">
         {/* left section */}
-        <div className="flex flex-col md:w-1/2 text-center md:items-left justify-center space-y-4 md:text-left">
+        <div className="flex flex-col md:w-3/4 text-center md:items-left justify-center space-y-4 md:text-left">
           <h2 className="text-white text-xl md:text-xl lg:text-2xl font-semibold">
             Hi, my name is
           </h2>
@@ -46,7 +46,7 @@ const HeroSection = () => {
           </ul>
         </div>
         {/* Right Section */}
-        <div className="w-1/2 scale-125 flex justify-center items-center mx-auto pt-6">
+        <div className=" w-1/2 md:w-1/4 scale-125 md:scale-150 flex justify-center items-center mx-auto pt-6">
           <img src={image} className="text-purple-600 floating  duration-100" alt="Coding" width="320" height="420" />
         </div>
       </div>
