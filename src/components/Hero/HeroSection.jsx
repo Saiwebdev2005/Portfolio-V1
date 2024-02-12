@@ -29,7 +29,7 @@ const socialLinksData = [
 const HeroSection = () => {
   let image = "/assets/astronaut.png";
   return (
-    <div className="p-4 py-24 md:py-32 h-screen bg-c12 relative">
+    <div className="p-4 py-24 md:py-28 h-screen bg-c12 relative">
       <Starfield className="absolute inset-0 z-0" />
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row z-10 relative">
         {/* left section */}

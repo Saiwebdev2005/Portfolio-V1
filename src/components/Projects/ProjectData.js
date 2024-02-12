@@ -14,8 +14,8 @@ const projects = [
   {
     image: '/assets/Project3.png',
     title: 'CryptPay',
-    description: 'Experience seamless crypto transactions on our Web3 platform. Convert your money into cryptocurrency, and send or receive digital assets with ease.',
-    badges: ['React', 'Solidity', 'TailwindCss'],
+    description: 'Experience seamless crypto transactions on our Web3 platform. Convert your money into cryptocurrency digital assets with ease.',
+    badges: ['Next.Js', 'Solidity', 'TailwindCss','hardhat'],
   },
 ];
 export default projects;
