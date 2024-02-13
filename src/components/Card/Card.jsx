@@ -7,14 +7,13 @@ const Card = ({ project }) => {
 
   return (
     <div
-      className="rounded-lg border border-c3 md:w-96 bg-c1 shadow-2xl hover:scale-110 duration-300 hover:-translate-y-3 hover:shadow-c3 relative"
+      className="rounded-lg border border-c3 md:w-96 bg-c1 shadow-2xl hover:scale-105 duration-300 hover:-translate-y-3 hover:cursor-pointer hover:shadow-c3 relative"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <div
-        className={`absolute inset-0 transition-opacity rounded-xl ${hover ? "opacity-80 text-white bg-c1 flex flex-row justify-center items-center space-x-4 duration-300" : "opacity-0"}`}
+        className={`absolute inset-0 transition-opacity rounded-xl `}
       >
-        <Button className="m-0" buttonText="Link"></Button>
       </div>
       <figure>
         <img className="rounded-t-xl" src={project.image} alt={project.title} />
