@@ -1,12 +1,12 @@
 /* Button.module.css */
 
 @font-face {
-  font-family: "Geist";
+  font-family: "inter";
   src: url("https://pham.codes/d/GeistMonoVF.woff2") format("woff2");
 }
 
 .text {
-  font-family: "Geist";
+  font-family: "inter";
   font-size: 7rem; /* Default size for large screens */
   margin: 0;
   color: #5BE9B9; /* Initial color */

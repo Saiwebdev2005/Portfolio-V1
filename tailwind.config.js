@@ -7,19 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        'breath': "breath 1.5s alternate ease-in-out infinite",
-      },
       keyframes: {
         breath: {
           "0%": { "font-variation-settings": '"wght" 32' },
         },
         "100%": { "font-variation-settings": '"wght" 240' },
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
         c1: "#000000",

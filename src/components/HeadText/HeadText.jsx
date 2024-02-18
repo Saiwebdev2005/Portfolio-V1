@@ -1,29 +1,33 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import styles from './HeadText.module.css';
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-const Button = () => {
-  const textRef = useRef(null);
+const colors = ["white", "#7510F7", "#5BE9B9"];
+
+const HeadText = () => {
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
   useEffect(() => {
-    const spans = textRef.current.querySelectorAll('span');
-    const numLetters = spans.length;
+    const intervalId = setInterval(() => {
+      setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 2000);
 
-    spans.forEach((span, i) => {
-      const mappedIndex = i - (numLetters / 2);
-      span.style.animationDelay = (mappedIndex * 0.25) + 's';
-    });
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
+  const currentColor = colors[currentColorIndex];
+
   return (
-    <div className={styles.container}>
-      <p ref={textRef} className={styles.text} aria-label="Geist Mono">
-        {Array.from('Sai Kumar').map((letter, i) => (
-          <span key={i} aria-hidden="true">{letter}</span>
-        ))}
-      </p>
+    <div>
+      <motion.h1
+        className={`text-8xl font-extrabold transition-colors duration-500 ease-in-out`}
+        style={{ color: currentColor }}
+      >
+        SAI KUMAR
+      </motion.h1>
     </div>
   );
 };
 
-export default Button;
+export default HeadText;

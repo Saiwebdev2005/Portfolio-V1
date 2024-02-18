@@ -4,7 +4,7 @@ import Link from "next/link";
 const Button = ({ buttonText, className, link }) => {
   return (
     <div className=" w-full flex items-center justify-center">
-      <Link href="#">
+      <Link href={link ? link : ""}>
         <div
           className={` relative inline-block text-lg group transform transition-transform duration-500 hover:scale-110 ${className}`}
         >
