@@ -1,7 +1,15 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import "./GlowButton.css"; // Assuming you saved your CSS in a file named Button.css
 import Link from "next/link";
 const Button = ({ buttonText, className, link }) => {
+  //i think the below is not needed
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className=" w-full flex items-center justify-center">
       <Link href={link ? link : ""}>
