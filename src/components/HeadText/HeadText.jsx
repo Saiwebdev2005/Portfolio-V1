@@ -21,7 +21,7 @@ const HeadText = () => {
   return (
     <div>
       <motion.h1
-        className={`text-8xl font-extrabold transition-colors duration-500 ease-in-out`}
+        className={`text-5xl md:text-8xl font-extrabold transition-colors duration-500 ease-in-out`}
         style={{ color: currentColor }}
       >
         SAI KUMAR
