@@ -28,9 +28,9 @@ const Contact = () => (
       </div>
       <div className='flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12'>
         {/* Left section */}
-        <div className='flex flex-col justify-center'>
+        <div className='flex flex-col justify-center md:mb-16 items-center text-center md:text-left'>
           <div className='w-64 space-y-4'>
-            <h1 className='text-6xl text-c3'>Get In Touch</h1>
+            <h1 className='text-6xl font-bold text-c3'>Get In Touch</h1>
             <p className='font-poppins'>If you’re interested in working with me or if you have any questions, please don’t hesitate to reach out. I look forward to the opportunity to work with you and contribute to your success.</p>
           </div>
         </div>

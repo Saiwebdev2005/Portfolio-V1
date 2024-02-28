@@ -41,10 +41,10 @@ try {
 }
 
   return (
-<form onSubmit={handleSubmit} className='flex flex-col '>
-  <input className='my-2 input border-white bg-c1' type="text" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} />
-  <input className='my-2 input bg-c1 border-white' type="email" placeholder='Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-  <textarea placeholder='Enter your message' className='my-2 textarea bg-c1 h-36 font-semibold border-white' cols="30" rows="10"  value={message} onChange={(e) => setMessage(e.target.value)} />
+<form onSubmit={handleSubmit} className='flex flex-col justify-center items-center'>
+  <input className='my-2 w-52 md:w-full input border-white bg-c1' type="text" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} />
+  <input className='my-2 input w-52 md:w-full bg-c1 border-white' type="email" placeholder='Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+  <textarea placeholder='Enter your message' className='my-2 textarea w-52 md:w-full bg-c1 h-36 font-semibold border-white' cols="30" rows="10"  value={message} onChange={(e) => setMessage(e.target.value)} />
   <div className='w-full  mx-auto text-center items-center'>
     <Button className="w-full" buttonText="Send :)" />
   </div>
