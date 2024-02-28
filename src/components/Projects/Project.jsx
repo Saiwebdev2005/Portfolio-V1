@@ -21,7 +21,7 @@ function Project() {
 </div>
 <div className="flex justify-center p-8">
   <Link href="/project" passHref>
-    <Button buttonText="View All Projects" link="/project">
+    <Button buttonText="View All" link="/project">
     </Button>
   </Link>
 </div>

@@ -9,8 +9,8 @@ function About() {
       {/* Svg */}
       <div className="container flex flex-col justify-center items-center mx-auto">
         {/* Header */}
-        <div className="p-6">
-          <h1 className="text-2xl md:text-6xl  font-bold text-right text-c3">
+        <div className="p-0 md:p-6">
+          <h1 className="text-4xl md:text-6xl  font-bold text-right text-c3">
             Who is Sai ?
           </h1>
         </div>
