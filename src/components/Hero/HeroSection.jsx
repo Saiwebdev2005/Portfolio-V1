@@ -6,7 +6,7 @@ import Starfield from "@/components/StarField/StarField";
 const HeroSection = () => {
   let image = "/assets/astronaut.png";
   return (
-    <div className="p-4 pt-24 pb-0 md:py-28 h-screen bg-c12 relative">
+    <div className="p-4 pt-24 pb-0 md:pt-28 h-screen bg-c12 relative">
       {/* <Starfield className=" absolute inset-0 z-0" /> */}
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row z-10 relative">
         {/* left section */}

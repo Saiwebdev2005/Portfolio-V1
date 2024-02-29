@@ -1,31 +1,50 @@
 "use client";
-import React from "react";
-import Link from 'next/link';
-import projects from './ProjectData'
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import projects from "./ProjectData";
 import Card from "../Card/Card";
-import Button from "../Button/GlowButton"
+import Button from "../Button/GlowButton";
+import { useInView } from "react-intersection-observer";
 function Project() {
- 
-  return (
-    <div id="Project" className="max-w-5xl md:mx-auto p-16 md:p-auto h-fit">
-      <div className="flex justify-center items-center p-12">
-      <h1 className="text-6xl">Projects</h1>
-      </div>
-      <div className="flex flex-col md:flex-row justify-center items-center md:space-x-6 space-y-6 md:space-y-0 font-sans max-w-5xl mx-auto">
-    {/* Project Card */}
-    {projects.map((project, index) => (
-        <div className="max-w-sm mx-auto">
-            <Card key={index} project={project} />
-        </div>
-    ))}
-</div>
-<div className="flex justify-center p-8">
-  <Link href="/project" passHref>
-    <Button buttonText="View All" link="/project">
-    </Button>
-  </Link>
-</div>
+  const [animationVisible, setAnimationVisible] = useState(false);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Adjust the threshold as needed
+  });
 
+  useEffect(() => {
+    if (inView) {
+      setAnimationVisible(true);
+    }
+  }, [inView]);
+  return (
+    <div
+      id="Project"
+      className="max-w-5xl md:mx-auto p-16 md:p-auto h-fit"
+      ref={ref}
+    >
+      <div
+        className={`flex justify-center items-center p-12 opacity-0 ${animationVisible ? "animate-slidein500" : ""}`}
+      >
+        <h1 className="text-6xl">Projects</h1>
+      </div>
+      <div
+        className={`flex flex-col md:flex-row justify-center items-center md:space-x-6 space-y-6 md:space-y-0 font-sans max-w-5xl mx-auto opacity-0 ${animationVisible ? "animate-slidein700" : ""}`}
+      >
+        {/* Project Card */}
+        {projects.map((project, index) => (
+          <div className="max-w-sm mx-auto">
+            <Card key={index} project={project} />
+          </div>
+        ))}
+      </div>
+      <div
+        className={`flex justify-center p-8  ${animationVisible ? "animate-slidein1000 opacity-0" : ""}`}
+      >
+        <Link href="/project" passHref>
+          <Button buttonText="View All" link="/project"></Button>
+        </Link>
+      </div>
     </div>
   );
 }
