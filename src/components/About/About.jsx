@@ -1,21 +1,42 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./About.module.css";
 import Button from "../Button/GlowButton";
+import { useInView } from "react-intersection-observer";
 
 function About() {
+  const [animationVisible, setAnimationVisible] = useState(false);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, // Adjust the threshold as needed
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setAnimationVisible(true);
+    }
+  }, [inView]);
+
   return (
-    <div className="max-w-4xl mx-auto h-fit md:h-screen mb-12 p-12">
+    <div
+      className={`max-w-4xl mx-auto h-fit md:h-screen mt-0 mb-12 p-12`}
+      ref={ref}
+    >
       {/* Svg */}
-      <div className="container flex flex-col justify-center items-center mx-auto">
+      <div className=" container flex flex-col justify-center items-center mx-auto">
         {/* Header */}
         <div className="p-0 md:p-6">
-          <h1 className="text-4xl md:text-6xl  font-bold text-right text-c3">
+          <h1
+            className={`text-4xl md:text-6xl opacity-0 font-bold text-right text-c3 ${animationVisible ? "animate-slidein500" : ""}`}
+            ref={ref}
+          >
             Who is Sai ?
           </h1>
         </div>
         {/* About Section */}
-        <div className="flex flex-col sm:flex-row justify-center max-w-5xl mx-auto items-center p-4 space-y-8 sm:space-y-0 sm:space-x-8 mt-6">
+        <div
+          className={`flex flex-col sm:flex-row opacity-0 justify-center max-w-5xl mx-auto items-center p-4 space-y-8 sm:space-y-0 sm:space-x-8 mt-6  ${animationVisible ? "animate-slidein700" : ""}`}
+        >
           {/* left section */}
           <div className="w-full sm:w-1/2 md:scale-125  md:duration-200 ">
             <img
@@ -27,15 +48,15 @@ function About() {
             />
           </div>
           {/* right */}
-          <div className="text-center sm:text-left md:text-lg space-y-4 items-center w-full sm:w-1/2 font-sans">
+          <div className="text-center sm:text-left md:text-2xl space-y-4 items-center w-full sm:w-1/2 font-sans">
             {/* Your paragraphs */}
             <p>
-              I’m <span className="text-c2 font-semibold">Sai Kumar</span>, a
-              blockchain enthusiast and a front-end developer on a mission. I'm
-              currently honing my skills in Information Technology at KG College
-              of Arts and Science, with a special focus on learning about
-              blockchain technology. My goal? To innovate and make a difference
-              in the world, one block(chain) at a time!
+              I’m <span className="text-c2 font-semibold">Sai Kumar</span>, Web3
+              Developer and college student, bridging web2 and web3 realms.
+              Passionate about{" "}
+              <span className="text-c3"> DeFi and asset tokenization</span>{" "}
+              within the blockchain ecosystem, I'm committed to pushing
+              technological boundaries in decentralized applications.
             </p>
           </div>
         </div>

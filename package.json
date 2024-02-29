@@ -22,6 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.8.1",
     "react-pdf": "^7.5.1",
     "react-read-more-read-less": "^1.0.7",
     "three": "^0.158.0",
