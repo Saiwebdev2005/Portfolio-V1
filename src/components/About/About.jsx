@@ -40,7 +40,7 @@ function About() {
           {/* left section */}
           <div className="w-full sm:w-1/2 md:scale-125  md:duration-200 ">
             <img
-              src="/assets/Profile.jpg"
+              src="/assets/ProfilePic.jpg"
               alt=""
               className="rounded-box mx-auto sm:mx-0 shadow-c2 shadow-2xl"
               width="300"
