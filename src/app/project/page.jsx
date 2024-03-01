@@ -17,7 +17,7 @@ function ProjectPage() {
     }
   }, [inView]);
   return (
-    <div className="w-full h-screen bg-c1">
+    <div className="w-full h-full md:h-screen bg-c1">
       <div id="Project" className="max-w-5xl mx-auto" ref={ref}>
         <div
           className={`flex justify-center items-center p-12 opacity-0 ${animationVisible ? "animate-slidein500" : ""}`}
@@ -29,7 +29,7 @@ function ProjectPage() {
         >
           {/* Project Card */}
           {projects.map((project, index) => (
-            <div className="max-w-sm mx-auto">
+            <div className="w-72 md:w-auto  mx-auto">
               <Card key={index} project={project} />
             </div>
           ))}
