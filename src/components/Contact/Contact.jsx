@@ -17,13 +17,13 @@ const Contact = () => (
       <div className='absolute left-0 top-0'>
         <img src="/assets/asteroids1.png" alt="" className="w-12 h-12 floating" />
       </div>
-      <div className='absolute right-0 bottom-0'>
+      <div className='absolute -right-10 md:right-0 bottom-0'>
         <img src="/assets/asteroids3.png" alt="" className="w-18 h-18 floating" />
       </div>
-      <div className='absolute left-10 bottom-0'>
+      <div className='absolute -left-10 md:left-10 bottom-0'>
         <img src="/assets/asteroids4.png" alt="" className="w-18 h-18 floating" />
       </div>
-      <div className='absolute right-10 top-0'>
+      <div className='absolute right-0 md:right-10 top-0'>
         <img src="/assets/asteroids5.png" alt="" className="w-18 h-18 floating" />
       </div>
       <div className='flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12'>
