@@ -1,5 +1,5 @@
-import Card from "../../app/test/Card";
 
+import SkillCard from "../Card/skillCard"
 function SkillSection({ title, skills }) {
   // Changed the prop name here
   return (
@@ -8,7 +8,7 @@ function SkillSection({ title, skills }) {
       <div className="flex flex-wrap  justify-center">
         {skills.map((card, index) => (
           <div className="m-4 md:m-2" key={index}>
-            <Card
+            <SkillCard
               borderColor={card.borderColor}
               gradientColors={card.gradientColors}
               textColor={card.textColor}
