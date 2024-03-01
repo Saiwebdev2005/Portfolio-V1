@@ -23,7 +23,7 @@ export default function Home() {
       {/* Fixed "Under Construction" button */}
       <div className="z-10 fixed bottom-0 left-0 right-0 flex justify-center mb-4">
         <button className="bg-red-500 text-lg md:text-xl text-white px-4 py-2 rounded">
-          Site Under Construction !!!
+          Site Under Testing !!!
         </button>
       </div>
     </main>
