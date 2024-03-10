@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontWeight: {
+        'superbold': '900', // You can adjust the value as needed
+      },
       keyframes: {
         slidein: {
           from: {
