@@ -16,9 +16,8 @@ export default function Navbar() {
             {/* Desktop */}
             <div className="sm:ml-6">
               <div className="flex space-x-8 ">
-                <Button buttonText="Testing">
+                <Button buttonText="Resume" link="https://drive.google.com/file/d/14zUXBvgbp-rCVzRH4pe8NsvEzXOxPah0/view?usp=sharing">
                   {/* Add you resume link */}
-                  <Link href="https://drive.google.com/file/d/1xwe9zWFc7dxTslzDv4pMl2axd37S-V98/view?usp=drive_link"></Link>
                 </Button>
               </div>
             </div>
